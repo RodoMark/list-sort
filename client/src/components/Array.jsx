@@ -1,12 +1,15 @@
 import React, { useContext } from 'react'
+import { GlobalContext } from '../context/GlobalContext'
 import ArrayItem from './ArrayItem'
 
 const Array = () => {
-  const stateList = useContext(GlobalContext)
+  const data = useContext(GlobalContext)
 
-  const [list, setList] = stateList
+  const [list, setList] = data.stateList;
 
-  const renderedItems = list.map(n => {
+  console.log(list)
+
+  const renderedItems = list && list.map(n => {
     return(
       <ArrayItem num={n} />
     )
@@ -14,7 +17,7 @@ const Array = () => {
 
   return (
     <section className="array">
-      {list && renderedItems}
+      {renderedItems}
     </section>
 
   )
@@ -22,3 +25,5 @@ const Array = () => {
 
   
 }
+
+export default Array

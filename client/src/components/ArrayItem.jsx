@@ -1,10 +1,16 @@
 import React from 'react'
 
 const ArrayItem = ({ num }) => {
-  <article
+
+  return (
+    <article
     className="array-item"
-    style={{color: "firebrick", height: 10*num}}
+    style={{backgroundColor: "firebrick", height: 10*num}}
   >
     {num}
   </article>
+  )
+  
 }
+
+export default ArrayItem

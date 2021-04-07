@@ -1,0 +1,19 @@
+section.array {
+  height: 40em;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  .array-item {
+    width: 2rem;
+    margin: 0 0.25rem;
+  } 
+  & p {
+    padding-bottom: 0.25em;
+    padding-left: 4em;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(180deg);
+  }
+}
