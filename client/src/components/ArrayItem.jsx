@@ -1,14 +1,15 @@
 import React from 'react'
 
-const ArrayItem = ({ num }) => {
+const ArrayItem = ({ num, key }) => {
 
   return (
     <article
-    className="array-item"
-    style={{backgroundColor: "firebrick", height: 10*num}}
-  >
-    {num}
-  </article>
+      key={key}
+      className="array-item"
+      style={{backgroundColor: "firebrick", height: 10*num}}
+    >
+      {num}
+    </article>
   )
   
 }

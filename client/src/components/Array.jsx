@@ -7,11 +7,9 @@ const Array = () => {
 
   const [list, setList] = data.stateList;
 
-  console.log(list)
-
-  const renderedItems = list && list.map(n => {
+  const renderedItems = list && list.map((n, i) => {
     return(
-      <ArrayItem num={n} />
+      <ArrayItem key={i} num={n} />
     )
   })
 
@@ -21,8 +19,6 @@ const Array = () => {
     </section>
 
   )
-  
-
   
 }
 
