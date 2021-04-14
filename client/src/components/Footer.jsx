@@ -1,19 +1,15 @@
 import React from 'react'
-import { Button, Menu } from '@material-ui/core'
+import Button from '@material-ui/core/Button'
+import Menu from '@material-ui/core/Menu'
 
-const Footer = (props) => {
+const Footer = () => {
   return (
-    <Footer>
-      <Button variant="outlined">
-        New List
-      </Button>
-      <Button variant="outlined">
-        Sort List
-      </Button>
+    <footer>
+      <Button variant="outlined">New List</Button>
+      <Button variant="outlined">SORT</Button>
       
-    </Footer>
-    
-
-    
-  ) 
+    </footer>
+  )
 }
+
+export default Footer

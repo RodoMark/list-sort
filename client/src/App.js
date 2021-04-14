@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Array from './components/Array'
+import Footer from './components/Footer'
 import GlobalContextProvider from './context/GlobalContext'
 import './App.scss';
 
@@ -10,6 +11,7 @@ function App() {
       <GlobalContextProvider>
         <Header />
         <Array />
+        <Footer />
       </GlobalContextProvider>
     </div>
     
