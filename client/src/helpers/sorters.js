@@ -1,4 +1,4 @@
-export function bubbleSort(list, speed) {
+export async function bubbleSort(list, speed) {
   const parsedArray = [...list]
   
   for(let i = 0; i < parsedArray.length; i++) {
