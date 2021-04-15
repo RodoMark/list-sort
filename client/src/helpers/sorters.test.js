@@ -18,8 +18,8 @@ test("bubbleSort returns a sorted array in ascending order", async () => {
 });
 
 // quickSort
-test("quickSort returns an array", () => {
-  const result = quickSort(list);
+test("quickSort returns an array", async () => {
+  const result = quickSort(list, speed);
   expect(Array.isArray(result)).toBe(true);
 });
 

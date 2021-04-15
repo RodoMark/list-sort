@@ -1,4 +1,4 @@
-export async function bubbleSort(list, speed) {
+export function bubbleSort(list, speed) {
   const parsedArray = [...list]
   
   for(let i = 0; i < parsedArray.length; i++) {
@@ -8,31 +8,32 @@ export async function bubbleSort(list, speed) {
         parsedArray[j+1] = parsedArray[j]
         parsedArray[j] = tmp
       }
-      await new Promise(r => setTimeout(r, speed));
     }
   }
   return parsedArray
 }
 
-export function quickSort(list) {
+export function quickSort(list, speed) {
   if(list.length <= 1) return list
 
   const leftArray = [], rightArray = [];
 
-  pivot = list[list.length - 1]
+  let pivot = list[list.length - 1]
   
-
-  for(const num of list.slice(0, list.length - 1)) {
-    (num < pivot) ? leftArray.push(num) : rightArray.push(num);
+  for(const num of list.slice(0, list.length-1)) {
+    num < pivot ? leftArray.push(num) : rightArray.push(num)
   }
 
   if(leftArray.length > 0 && rightArray.length > 0) {
-    return [...quickSort(leftArray), pivot, ...quickSort(rightArray)];
-  } else if(leftArray.length > 0) {
+    return [...quickSort(leftArray), pivot, ...quickSort(rightArray)]
+  } else if (leftArray.length > 0) {
     return [...quickSort(leftArray), pivot]
   } else {
     return [pivot, ...quickSort(rightArray)]
   }
+  
+
+
 }
 
 export function mergeSort(list) {
