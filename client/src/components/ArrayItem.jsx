@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ArrayItem = ({ num, key }) => {
+const ArrayItem = ({ num, key, color }) => {
 
   return (
     <article
+      className={`array-item ${color}`}
       key={key}
-      className="array-item"
       style={{backgroundColor: "firebrick", height: 10*num}}
     >
       {num}
