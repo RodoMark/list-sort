@@ -9,6 +9,11 @@ const GlobalContextProvider = (props) => {
   const [speed, setSpeed] = useState(700)
   const [method, setMethod] = useState('BUBBLE')
 
+  const generateList = () => {
+    const randomNum = () => Math.round(Math.random() * 36) + 3
+    setList(list.map(n => randomNum()))
+  }
+
   function bubbleSort(list) {
     const parsedArray = [...list]
     
@@ -62,6 +67,7 @@ const GlobalContextProvider = (props) => {
     stateMethod: [method, setMethod],
 
     //methods
+    generateList,
     bubbleSort,
     mergeSort,
     quickSort,
