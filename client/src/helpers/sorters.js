@@ -15,9 +15,24 @@ export async function bubbleSort(list, speed) {
 }
 
 export function quickSort(list) {
-  const parsedArray = [...list]
+  if(list.length <= 1) return list
+
+  const leftArray = [], rightArray = [];
+
+  pivot = list[list.length - 1]
   
-  return []
+
+  for(const num of list.slice(0, list.length - 1)) {
+    (num < pivot) ? leftArray.push(num) : rightArray.push(num);
+  }
+
+  if(leftArray.length > 0 && rightArray.length > 0) {
+    return [...quickSort(leftArray), pivot, ...quickSort(rightArray)];
+  } else if(leftArray.length > 0) {
+    return [...quickSort(leftArray), pivot]
+  } else {
+    return [pivot, ...quickSort(rightArray)]
+  }
 }
 
 export function mergeSort(list) {
