@@ -47,15 +47,17 @@ const GlobalContextProvider = (props) => {
       num < pivot ? leftArray.push(num) : rightArray.push(num)
     }
   
+    await sleep(speed)
+
     if(leftArray.length > 0 && rightArray.length > 0) {
-      setList([...quickSort(leftArray), pivot, ...quickSort(rightArray)])
-      return [...quickSort(leftArray), pivot, ...quickSort(rightArray)]
+      let parsedArray = [...quickSort(leftArray), pivot, ...quickSort(rightArray)];
+      return parsedArray;
     } else if (leftArray.length > 0) {
-      setList([...quickSort(leftArray), pivot])
-      return [...quickSort(leftArray), pivot]
+      let parsedArray = [...leftArray, pivot];
+      return parsedArray;
     } else {
-      setList([pivot, ...quickSort(rightArray)])
-      return [pivot, ...quickSort(rightArray)]
+      let parsedArray = [pivot, ...quickSort(rightArray)];
+      return parsedArray;
     }
     
   }
