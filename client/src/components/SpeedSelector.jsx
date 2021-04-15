@@ -9,10 +9,6 @@ const SpeedSelector = () => {
 
     const [speed, setSpeed] = stateSpeed;
 
-    useEffect(() => {
-      console.log('update list')
-    }, [list]);
-
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
@@ -32,7 +28,7 @@ const SpeedSelector = () => {
       Set Speed
       </Button>
         <Menu
-          id="simple-menu"
+          id="speed-menu"
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
@@ -48,4 +44,4 @@ const SpeedSelector = () => {
   )
 }
 
-export default Footer
+export default SpeedSelector

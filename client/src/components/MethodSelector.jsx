@@ -4,14 +4,10 @@ import Button from '@material-ui/core/Button'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem';
 
-const Footer = () => {
+const MethodSelector = () => {
   const { stateMethod } = useContext(GlobalContext);
 
     const [method, setMethod] = stateMethod;
-
-    useEffect(() => {
-      console.log('update list')
-    }, [list]);
 
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -33,7 +29,7 @@ const Footer = () => {
       Choose Sorting Algorithm
       </Button>
         <Menu
-          id="simple-menu"
+          id="method-menu"
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
@@ -47,4 +43,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default MethodSelector
