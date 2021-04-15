@@ -6,7 +6,7 @@ const GlobalContextProvider = (props) => {
   
   const [list, setList] = useState([70, 54, 21, 60, 7, 12, 82, 37, 45, 63, 80, 14])
   
-  const [speed, setSpeed] = useState(700)
+  const [speed, setSpeed] = useState(300)
   const [method, setMethod] = useState('BUBBLE')
 
   const generateList = () => {
@@ -14,7 +14,11 @@ const GlobalContextProvider = (props) => {
     setList(list.map(n => randomNum()))
   }
 
-  function bubbleSort(list) {
+  const sleep = (speed) => {
+    return new Promise(resolve => setTimeout(resolve, speed))
+  }
+
+  async function bubbleSort(list, speed) {
     const parsedArray = [...list]
     
     for(let i = 0; i < parsedArray.length; i++) {
@@ -24,13 +28,15 @@ const GlobalContextProvider = (props) => {
           parsedArray[j+1] = parsedArray[j]
           parsedArray[j] = tmp
         }
-        setList(parsedArray)
+        await sleep(speed)
+        setList([...parsedArray])
+        
       }
     }
     return parsedArray
   }
   
-  function quickSort(list) {
+  async function quickSort(list, speed) {
     if(list.length <= 1) return list
   
     const leftArray = [], rightArray = [];
@@ -54,7 +60,7 @@ const GlobalContextProvider = (props) => {
     
   }
   
-  function mergeSort(list) {
+  async function mergeSort(list, speed) {
     const parsedArray = [...list]
     
     return []

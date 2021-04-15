@@ -8,11 +8,13 @@ const Array = () => {
   const [list, setList] = data.stateList;
 
   const renderedItems = list && list.map((n, i) => {
-    return(
-      <ArrayItem key={i} num={n} />
-    )
+    if(i > i + 1) {
+      return <ArrayItem color="array-item--red" key={i} num={n} />
+    } else {
+      return <ArrayItem color="array-item--green" key={i} num={n} />
+    }
   })
-
+  
   return (
     <section className="array">
       {renderedItems}
