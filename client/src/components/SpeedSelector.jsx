@@ -5,8 +5,7 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem';
 
 const SpeedSelector = () => {
-  const { 
-    stateSpeed, } = useContext(GlobalContext);
+  const { stateSpeed } = useContext(GlobalContext);
 
     const [speed, setSpeed] = stateSpeed;
 
@@ -28,7 +27,7 @@ const SpeedSelector = () => {
     };
 
   return (
-    <footer>
+    <>
       <Button id="speed-menu" variant="outlined" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
       Set Speed
       </Button>
@@ -45,7 +44,7 @@ const SpeedSelector = () => {
           <MenuItem onClick={() => handleSpeed(1000)}>Step By Step</MenuItem>
         </Menu>
 
-    </footer>
+    </>
   )
 }
 
