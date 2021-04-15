@@ -8,10 +8,8 @@ export function bubbleSort(list) {
         parsedArray[j+1] = parsedArray[j]
         parsedArray[j] = tmp
       }
-      
     }
   }
-
   return parsedArray
 }
 
