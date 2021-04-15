@@ -1,4 +1,4 @@
-export function bubbleSort(list, speed) {
+export function bubbleSort(list) {
   const parsedArray = [...list]
   
   for(let i = 0; i < parsedArray.length; i++) {
@@ -8,12 +8,14 @@ export function bubbleSort(list, speed) {
         parsedArray[j+1] = parsedArray[j]
         parsedArray[j] = tmp
       }
+      
     }
   }
+
   return parsedArray
 }
 
-export function quickSort(list, speed) {
+export function quickSort(list) {
   if(list.length <= 1) return list
 
   const leftArray = [], rightArray = [];
@@ -32,8 +34,6 @@ export function quickSort(list, speed) {
     return [pivot, ...quickSort(rightArray)]
   }
   
-
-
 }
 
 export function mergeSort(list) {
